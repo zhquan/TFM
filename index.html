@@ -8,7 +8,7 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/blocs.js"></script>
-    <title>TFG</title>
+    <title>Q-DashMan</title>
 </head>    
 <body>
 <!-- Main container -->
@@ -23,13 +23,13 @@
 			</h1>
             <div class="hero-content">
 			 <h3>
-				 <p><h2>Visualización de datos de desarrollo de software</h2></p>
+				 <p><h2>Data Visualization of Software Development</h2></p>
 
 			</h3>
 			<h5><br>
-				Curso: 2017/2018<br>
+				Course: 2018/2019<br>
 				Tutor: Dr Jesús María González-Barahona<br><br>
-				Creado por Quan Zhou
+				Created by Quan Zhou
 			</h5>
                 <a onclick="scrollToTarget('#core')" class="btn-dwn"><span class="fa fa-chevron-down">V</span></a>
             </div>
@@ -42,43 +42,61 @@
 <div class="bloc  d-bloc " id="core">
 <br><br><br>
 	<div align="center" style="width: 60%; margin-left: 18%">
-		<h3>Resumen</h3>
+		<h3>Abstract</h3>
 		<span style="color:#59636b; font-size: 18px" align="left">
 			<p>
-				Q-DashMan es una aplicación web en Django que sirve para generar dashboards de una manera muy 
-				simple, usando las herramientas de GrimoireLab.
+				Q-DashMan is a web application used to generate dashboards with metrics about a software's project
+				development in an easy way. For that, we use Django (as development's framework of web applications) and
+				GrimoireLab's tools (several tools to collect, analyze and view metrics about software's development).
+
 			</p>
 			<p>
-				Actualmente extraer información de las múltiples fuentes de datos de desarrollo de software no es 
-				complicado gracias a la herramienta llamado Perceval. Además podemos saber quien está contribuyendo 
-				a los proyectos y en que empresa u organización está trabajando, quienes son los que están manteniendo 
-				el proyecto vivo, quienes son los que están revisando los códigos, etc. Todo esto es posible gracias a 
-				Sortinghat que nos afilia automáticamente según el dominio, nombre de usuario, un fichero, etc. 
-				Una vez que haya terminado el proceso de afiliación, tenemos que visualizarlos con Sigils para 
-				que podamos entender bien esos datos con gráficas simples y también nos brinda la posibilidad de crear 
-				unos nuevos si fuera necesario. Todo esto está orquestado por Mordred para que todas las piezas 
-				del puzzle encajen perfectamente y por resultado, un dashboard totalmente personalizado.
+				Q-DashMan uses several GrimoireLab’s tools. Its final goal is to export data from the systems where you
+				develop and analyze the software to produce at the end a dashboard that shows interesting metrics in an
+				interactive way. Q-DashMan let specifying which ones are those systems for a specific project and
+				manages the whole process till the dashboard is ready to work.
 			</p>
 			<p>
-				Aunque tenemos herramientas para crear un dashboard desde cero. Pero ¿cómo se configuran los ficheros de 
-				Mordred para que funcione todo correctamente?<br>
-				Aquí es donde entra en juego esta aplicación para que el usuario vea un interfaz muy simple y sin tener 
-				que escribir código, además sólo rellenando unos simples formularios para que SirModred pueda empezar a 
-				hacer su magia para que empiece a recoger los datos de las fuentes, procesarlos hasta la generación de nuestro dashboard.
+				GrimoireLab’s tools used are the following:
+				<ul>
+					<li>SirMordred: Orchestration.</li>
+					<li>Perceval: Data collection.</li>
+					<li>Sortinghat: Affiliate identities automatically.</li>
+					<li>Sigils: Data Visualization.</li>
+				</ul>
 			</p>
 			<p>
-				Por otro lado la configuración de estos ficheros son muy liosos y cada fuente de dato es diferente. 
-				Por ejemplo para Git, Mordred necesita saber todos los repositorios git que se van a analizar, 
-				además hay que obtener esos repositorios, si están alojados por ejemplo en GitHub nos tenemos que 
-				fijar también si son repositorios forks\footnote{Repositorios que son copias de otro o no, ya que normalmente 
-				sólo nos interesa saber como están evolucionando nuestros proyectos.<br>
-				Pues esto en la aplicación con sólo introducir el nombre de la organización de GitHub nos crea 
-				directamente el fichero de proyectos en formato de Mordred con todos los repositorios. 
-				De igual modo con los canales de Slack y los grupos de Meetup.
+				Consequently, GrimoireLab gives you the tools you need. However, writing files set forMordred is
+				difficult and boring and it forces you to let the machine access to the place where the analysis is
+				going to happen due to you need to manage the set file and run the tools.
 			</p>
 			<p>
-				En definitiva esta aplicación nos facilita la vida para tener un dashbard personalizable y con todas 
-				métricas, visualizaciones, afiliaciones y mucho más. Gracias a la herramienta GrimoireLab desarrollado por Bitergia.
+				In this part of the process is where Q-DashMan offers an alternative: an app who offers the generation
+				of dashboards as a service. The user interface that it offers is very simple comparted with the files
+				set by SirMordred, you’d only need to complete some files to specify the data source of the project
+				you’re going to analyze.
+				<br><br>
+				For instance:<br>
+				Create the projects file
+				<img width="700" height="450" src="img/tfm-projects-add.png" class="img-responsive center-block mg-lg"/>
+				Create the SirMordred set up file
+				<img width="700" height="450" src="img/tfm-setup-settings.png" class="img-responsive center-block mg-lg"/>
+				Add data source into SirMordred set up file
+				<img width="700" height="450" src="img/tfm-setup-add.png" class="img-responsive center-block mg-lg"/>
+			</p>
+			<p>
+				All the rest is completely automatic since Q-DashMan produces a dashboard hiding the difficult use of
+				all GrimoireLab’s tools to the user.
+			</p>
+			<p>
+				We used development web standard technologies to built Q-DashMan based on Django framework. The tool is
+				written in Python, it uses a database MariaDB and it can be deployed in a simple way by using Docker
+				containers. The tool is easy to deploy and it’s being used as a trial in environments as preproduction
+				to build dashboards in more than 10 different projects.
+			</p>
+			<p>
+				As a conclusion, Q-DashMan is designed to offer the generation of development software projects
+				dashboards as an automatic service, generated by users with any management.
 			</p>
 		</span>
 
@@ -87,22 +105,16 @@
 		
 		<div class="row voffset">
 			<div class="col-sm-5">
-				<a href="https://www.github.com/zhquan/Q-DashMan/"><img width="150" height="150" src="img/developer.png" class="img-responsive center-block mg-lg" alt="codigo" /></a>
+				<a href="https://www.github.com/zhquan/Q-DashMan/"><img width="150" height="150" src="img/developer.png" class="img-responsive center-block mg-lg"/></a>
 				<h4 class="mg-md text-center ">
-					<strong>CÓDIGO FUENTE</strong>
+					<strong>SOURCE CODE</strong>
 				</h4>
-				<p class="text-center mg-lg">
-					Para ver como se hizo el proyecto, puedes acceder al código fuente.
-				</p>
 			</div>
 			<div class="col-sm-5">
-				<a href="http://zhquan.github.io/TFM/memoria.pdf"><img width="150" height="150" src="img/beginner.png" class="img-responsive center-block mg-lg" alt="Memoria"/></a>
+				<a href="http://zhquan.github.io/TFM/memoria.pdf"><img width="150" height="150" src="img/beginner.png" class="img-responsive center-block mg-lg"/></a>
 				<h4 class="mg-md text-center">
-					<strong>MEMORIA</strong>
+					<strong>MEMORY</strong>
 				</h4>
-				<p class="text-center mg-lg">
-					Para saber el funcionamiento del proyecto.
-				</p>
 			</div>
 		</div>
 	</div>
