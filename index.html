@@ -38,7 +38,9 @@
 					development in an easy way. For that, we use Django (as development's framework of web applications) and
 					GrimoireLab's tools (several tools to collect, analyze and view metrics about software's development).
 				</h4>
-
+				<div class="col-sm-12">
+					<a onclick="scrollToTarget('#core')" style="font-size:2em;"><i class="fas fa-plus"></i></a>
+				</div>
             </div>
 			<div class="container bloc-xl">
 				<div class="row voffset">
@@ -55,9 +57,9 @@
 						</h5>
 					</div>
 					<div class="col-sm-3">
-						<a onclick="scrollToTarget('#core')" style="font-size:5em;"><i class="fas fa-plus"></i></a>
-						<h5 class="mg-md text-center ">
-							<strong>More Info</strong>
+						<a href="http://zhquan.github.io/TFM/presentation.pdf" style="font-size:5em;" ><i class="far fa-file-pdf"></i></a>
+						<h5 class="mg-md text-center">
+							<strong>SLIDES</strong>
 						</h5>
 					</div>
 					<div class="col-sm-3">
@@ -76,7 +78,7 @@
 <!-- core feature bloc -->
 <div class="bloc  d-bloc " id="core">
 <br><br><br>
-	<div align="center" style="width: 60%; margin-left: 18%">
+	<div align="left" style="width: 60%; margin-left: 18%">
 		<span style="color:#59636b; font-size: 18px" align="left">
 			<p>
 				Q-DashMan is a web application used to generate dashboards with metrics about a software's project
@@ -111,12 +113,17 @@
 				you’re going to analyze.
 				<br><br>
 				For instance:<br>
-				Create the projects file
-				<img width="700" height="450" src="img/tfm-projects-add.png" class="img-responsive center-block mg-lg"/>
-				Create the SirMordred set up file
-				<img width="700" height="450" src="img/tfm-setup-settings.png" class="img-responsive center-block mg-lg"/>
-				Add data source into SirMordred set up file
-				<img width="700" height="450" src="img/tfm-setup-add.png" class="img-responsive center-block mg-lg"/>
+				Create the projects file with Q-DashMan is very simple, you all need is fill this form. For example
+				if you want to track a one of the GitHub organization or user, in my case "zhquan" that is my user name
+				in GitHub. Q-DashMan will get all repositories under "zhquan" to compose the projects file.
+				<img width="300" height="450" src="img/projects.png" class="img-responsive center-block mg-lg"/>
+				In SirMordred general configuration has a lot of parameters and we don't know which parameters are required
+				or what you need to fill it. Q-DashMan give you a by default values and advise you if one of the required
+				parameters are not filled.
+				<img width="300" height="450" src="img/setup.png" class="img-responsive center-block mg-lg"/>
+				We need to add the data sources configurations and the name of the indexes so fill this symple form for each
+				data sources you want to track.
+				<img width="300" height="450" src="img/datasources.png" class="img-responsive center-block mg-lg"/>
 			</p>
 			<p>
 				All the rest is completely automatic since Q-DashMan produces a dashboard hiding the difficult use of
